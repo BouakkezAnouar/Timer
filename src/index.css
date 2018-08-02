@@ -1,0 +1,42 @@
+body {
+  text-align: center;
+  background: #00ecb9;
+  font-family: "Trebuchet MS";
+  color: white;
+}
+
+.timer {
+  margin-top: 30vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+}
+
+.time-item {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #00bf96;
+}
+
+.time {
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #00816a;
+}
+
+.smalltext {
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 15px 30px;
+  margin: 10px;
+  background: #1abc9c;
+  border: 0;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 20px;
+}
