@@ -7,12 +7,12 @@ import Timer from "./Timer";
 class App extends Component {
   state = {
     start: false,
-    seconds: 60 * 30,
+    miliseconds: 0,
     etat: "Start"
   };
 
   HandleReset = () => {
-    this.setState({ start: false, seconds: 0, etat: "Start" });
+    this.setState({ start: false, miliseconds: 0, etat: "Start" });
     clearInterval(this.interval);
   };
 
@@ -27,11 +27,11 @@ class App extends Component {
         //callback to get the new update of state
         this.setState({ etat: this.state.start === false ? "Start" : "Pause" });
         if (this.state.start) {
-          //apres chaque seconde incremente
+          //apres chaque miliseconds incremente
           this.interval = setInterval(() => {
-            const seconds = this.state.seconds + 1;
-            this.setState({ seconds });
-          }, 1000);
+            const miliseconds = this.state.miliseconds + 10;
+            this.setState({ miliseconds });
+          }, 10);
         } else {
           clearInterval(this.interval);
         }
@@ -46,11 +46,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Timer seconds={this.state.seconds} start={this.state.start} />
+        <Timer miliseconds={this.state.miliseconds} start={this.state.start} />
         <Controls
           onHandleStart={this.HandleStart}
           onHandleReset={this.HandleReset}
           etat={this.state.etat}
+          miliseconds={this.setState.miliseconds}
         />
       </div>
     );
