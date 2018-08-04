@@ -12,18 +12,19 @@ class App extends Component {
   };
 
   HandleReset = () => {
-    this.setState(prevState => ({ start: false, seconds: 0, etat: "Start" }));
+    this.setState({ start: false, seconds: 0, etat: "Start" });
     clearInterval(this.interval);
   };
 
   // set interval in callback to get the value of the new state
   HandleStart = () => {
     this.setState(
+      // i use prevState because problem of Asynchron setState
       prevState => ({
-        start: prevState.start === true ? false : true
+        start: prevState.start ? false : true
       }),
       () => {
-        //callback
+        //callback to get the new update of state
         this.setState({ etat: this.state.start === false ? "Start" : "Pause" });
         if (this.state.start) {
           //apres chaque seconde incremente

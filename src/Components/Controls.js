@@ -3,8 +3,15 @@ import React, { Component } from "react";
 const Controls = props => {
   return (
     <div className="controls">
-      <button onClick={props.onHandleStart}>{props.etat}</button>
-      <button onClick={props.onHandleReset}>Reset</button>
+      <button
+        onClick={props.onHandleStart}
+        className={props.etat === "Start" ? "start" : "pause"}
+      >
+        {props.etat}
+      </button>
+      <button onClick={props.onHandleReset} className="reset">
+        Reset
+      </button>
     </div>
   );
 };
