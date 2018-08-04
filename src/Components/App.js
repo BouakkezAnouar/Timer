@@ -26,9 +26,6 @@ class App extends Component {
         //callback
         this.setState({ etat: this.state.start === false ? "Start" : "Pause" });
         if (this.state.start) {
-          //lancer directement sans attendre 1 seconde
-          const seconds = this.state.seconds + 1;
-          this.setState({ seconds });
           //apres chaque seconde incremente
           this.interval = setInterval(() => {
             const seconds = this.state.seconds + 1;
