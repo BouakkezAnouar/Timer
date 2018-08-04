@@ -24,7 +24,7 @@ class Timer extends Component {
     seconds %= 60;
 
     return {
-      miliseconds: this.formatTime(miliseconds),
+      miliseconds: this.formatTime(miliseconds / 10),
       seconds: this.formatTime(seconds),
       hours: this.formatTime(hours),
       minutes: this.formatTime(minutes),
