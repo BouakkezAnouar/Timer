@@ -7,7 +7,7 @@ import Timer from "./Timer";
 class App extends Component {
   state = {
     start: false,
-    seconds: 0,
+    seconds: 60 * 30,
     etat: "Start"
   };
 
